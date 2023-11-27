@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "MateSC";
+  src: url("../assets/fonts/mateSC/MateSC-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Monoton";
+  src: url("../assets/fonts/monoton/Monoton-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Tangerine";
+    src: url("../assets/fonts/tangerine/Tangerine-Regular.ttf") format("truetype");
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+    font-family: MateSC;
+    letter-spacing: 3px;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes updown {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 100px;
+  }
+  50% {
+    top: -100px;
+  }
+  75% {
+    top: 100px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.wrapper {
+  width: 30%;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62);
+  animation: updown 3s 1;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: rgb(0, 145, 255);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(76, 170, 243);
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid black;
+  font-family: Tangerine;
+  font-size: 2rem;
+}
+
+.boton-eliminar {
+  margin: 3px;
+  background-color: rgb(244, 48, 48);
+  border-radius: 300px;
+}
+
+.boton-eliminar:hover {
+  background-color: rgb(243, 94, 94);
+}
