@@ -17,13 +17,17 @@ export class TareasManager {
   }
 
   listarTareas() {
+    
     //Es para inicializar la descripcion de la tarea. Esta en blanco porque aun no la hemos añadido
     this.listaTareas.innerHTML = "";
+    if(localStorage.getItem("arrayTareas") !== null) {
+      this.arrayTareas = this.getArrayTareas();
+    }
     this.arrayTareas.reverse().forEach((tarea) => {
       this.listaTareas.innerHTML += `
                 <li id="${tarea.id}">
                     <input type="text" class="input-tarea" value="${tarea.descripcion}" placeholder="Tarea nueva...">
-                    <button class="boton-eliminar">X</button>
+                    <button class="boton-eliminar">☠</button>
                 </li>
             `;
     });
@@ -67,7 +71,9 @@ export class TareasManager {
   getArrayTareas(){
     this.setContador();
     const array = JSON.parse(localStorage.getItem('arrayTareas'));
-    return array || [];
+    //IMPORTANTE. CONVERTIR OBJETOS GENERICOS EN INSTANCIAS DE LA CLASE TAREA
+    const tareasConvertidas = array.map((tarea) => new Tarea(tarea.id, tarea.descripcion));
+    return tareasConvertidas;
   }
 
   setArrayTareas(){

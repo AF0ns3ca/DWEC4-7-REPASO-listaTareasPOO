@@ -82,10 +82,16 @@ button:hover {
 
 li {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 input {
   padding: 5px;
+  height: 40px;
   border-radius: 2px;
   border: 1px solid black;
   font-family: Tangerine;
@@ -93,9 +99,14 @@ input {
 }
 
 .boton-eliminar {
+  display: grid;
+  place-content: center;
   margin: 3px;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
   background-color: rgb(244, 48, 48);
-  border-radius: 300px;
+  border-radius: 5px;
 }
 
 .boton-eliminar:hover {
