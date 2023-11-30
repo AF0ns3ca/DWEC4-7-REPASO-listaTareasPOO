@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "MateSC";
+  src: url("../assets/fonts/mateSC/MateSC-Regular.ttf") format("truetype");
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  font-family: MateSC;
+  background: rgb(5, 5, 20);
+  background-image: url("../assets/imgs/wallpaper3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+button{
+    font-family: MateSC;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(233, 195, 148, 1) 100%
+  );
+  max-width: 400px;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.5);
+  /* -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.62); */
+}
+
+.header{
+    border-bottom: 1px solid black;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.boton-agregar{
+    display: block;
+    margin: auto;
+    margin-top: -15px;
+    padding: 4px 10px;
+    font-weight: bold;
+    border: 3px solid #000000;
+}
+
+.boton-agregar:hover{
+    background-color: rgb(110, 214, 100);
+}
+
+.lista-tareas{
+    list-style: none;
+    padding: 0;
+}
+
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+        /*transformacion vertical*/
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes desaparecer{
+    0%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.lista-tareas li{
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.5);
+    animation: aparecer 0.5s ease-in-out;
+}
+
+.lista-tareas li:hover{
+    background-color: rgba(233, 195, 148, 1)
+}   
+
+.lista-tareas li.eliminada{
+    animation: desaparecer 2s ease-in;
+    animation-fill-mode: forwards;
+}
